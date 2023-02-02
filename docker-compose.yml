@@ -1,0 +1,17 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb:10.8.3
+    restart: always
+    container_name: volkswagen-team02-db
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: team02-db
+      MARIADB_USER: team02-db
+      MARIADB_PASSWORD: example
+      TZ: Europe/Berlin
+    ports:
+      - "3306:3306"
